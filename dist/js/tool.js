@@ -1118,6 +1118,7 @@ var _hoisted_16 = {
   "class": "ml-1"
 };
 var _hoisted_17 = {
+  key: 2,
   "class": "bg-gray-50 rounded px-3 py-3 text-gray-600 mt-6"
 };
 var _hoisted_18 = {
@@ -1178,9 +1179,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
             }, null, 8 /* PROPS */, ["type"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('nova-laracache.refresh-after.delete')) + ":", 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_15, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_Icon, {
               type: $setup.entity.refreshAfter.restore ? 'badge-check' : 'x-circle',
               solid: ""
-            }, null, 8 /* PROPS */, ["type"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('nova-laracache.refresh-after.restore')) + ":", 1 /* TEXT */)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.entity.value.type), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.entity.value.content), 1 /* TEXT */)])])];
+            }, null, 8 /* PROPS */, ["type"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(_ctx.__('nova-laracache.refresh-after.restore')) + ":", 1 /* TEXT */)])])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.entity.value.content ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_17, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("code", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.entity.value.type), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("pre", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.entity.value.content), 1 /* TEXT */)])])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)];
           }),
-
           _: 1 /* STABLE */
         })];
       }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_ModalFooter, null, {
