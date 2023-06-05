@@ -18,6 +18,7 @@ return [
     'nova-laracache.modal.refresh.title'       => 'Refresh Cache Entities',
     'nova-laracache.modal.refresh.description' => 'Are you sure you want to refresh the following cache entities?',
     'nova-laracache.modal.refresh.submit'      => 'Refresh',
+    'nova-laracache.modal.success-msg'         => 'Cache operation has been done successfully. Data will be updated soon.',
     'nova-laracache.valid-for-day'             => 'Valid For Rest Of The Day',
     'nova-laracache.valid-for-week'            => 'Valid For Rest Of The Week',
     'nova-laracache.forever'                   => 'Valid Forever',

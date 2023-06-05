@@ -63,6 +63,7 @@ import DeleteCacheEntityModal from "../Modals/DeleteCacheEntityModal.vue";
 import RefreshCacheEntityModal from "../Modals/RefreshCacheEntityModal.vue";
 import ViewCacheEntityModal from "../Modals/ViewCacheEntityModal.vue";
 import Toolbar from "../Toolbar.vue";
+import __ from '../../../../vendor/laravel/nova/resources/js/util/localization'
 
 const model = ref('')
 const entities = ref([])
@@ -114,7 +115,8 @@ const closeModal = (modal) => {
 }
 
 const refresh = () => {
-    emit('refresh')
+    Nova.success(__('nova-laracache.modal.success-msg'))
+    // emit('refresh')
 }
 
 </script>
