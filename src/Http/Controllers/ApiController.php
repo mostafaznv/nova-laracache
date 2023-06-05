@@ -4,6 +4,7 @@ namespace Mostafaznv\NovaLaraCache\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
@@ -32,6 +33,7 @@ class ApiController extends Controller
 
         $list = Cache::driver($this->driver)->get($key);
         $list = is_array($list) ? $list : [];
+        $list = Arr::sort($list);
 
         foreach ($list as $item) {
             $model = $this->model($item);

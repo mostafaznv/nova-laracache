@@ -3,6 +3,7 @@
 namespace Mostafaznv\NovaLaraCache\Http\Controllers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 
 
 class ListController extends ApiController
@@ -38,8 +39,11 @@ class ListController extends ApiController
     private function entities(Model $model): array
     {
         $entities = [];
+        $cacheEntities = Arr::sort($model->cacheEntities(), function ($entity) {
+            return $entity->name;
+        });
 
-        foreach ($model->cacheEntities() as $entity) {
+        foreach ($cacheEntities as $entity) {
             $entities[] = $this->entityToArray($entity, $model->getMorphClass());
         }
 
