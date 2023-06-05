@@ -1,0 +1,16 @@
+.laracache-modal-label-value {
+    display: flex;
+    align-items: center;
+
+    span {
+        margin-right: 8px;
+
+        &:first-child {
+            font-weight: 600;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

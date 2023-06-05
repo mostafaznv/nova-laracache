@@ -1,0 +1,36 @@
+{
+    "name": "mostafaznv/nova-laracache",
+    "description": "LaraCache Tool for Laravel Nova",
+    "keywords": ["laravel", "nova", "cache", "redis", "memcache", "eloquent", "orm"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "laravel/nova": "^4.0",
+        "mostafaznv/laracache": "^2.3.2",
+        "laravel/framework": "^10.4.1",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mostafaznv\\NovaLaraCache\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mostafaznv\\NovaLaraCache\\NovaLaraCacheServiceProvider"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

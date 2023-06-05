@@ -1,0 +1,11 @@
+{
+    "nova-laracache.section-name": "Cache",
+    "nova-laracache.stats.models.title": "Models",
+    "nova-laracache.stats.models.desc": "Number of models using LaraCache trait",
+    "nova-laracache.stats.entities.title": "Entities",
+    "nova-laracache.stats.entities.desc": "Number of cached entities",
+    "nova-laracache.expiration": "Expiration",
+    "nova-laracache.view": "View",
+    "nova-laracache.delete": "Delete",
+    "nova-laracache.refresh": "Refresh"
+}
