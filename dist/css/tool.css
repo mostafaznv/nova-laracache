@@ -19,3 +19,7 @@
 .toolbar-container:hover .toolbar-buttons {
   opacity: 1;
 }
+
+.shadow-none {
+  box-shadow: 0 0 rgba(0, 0, 0, 0);
+}

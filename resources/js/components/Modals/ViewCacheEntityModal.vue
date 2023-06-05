@@ -10,59 +10,61 @@
                 />
 
                 <ModalContent>
-                    <Card v-if="working" class="py-12">
+                    <Card v-if="working" class="py-12 shadow-none">
                         <div class="rounded-lg flex items-center justify-center inset-0 z-30 light">
                             <Loader class="text-gray-300" width="30" />
                         </div>
                     </Card>
 
-                    <div v-else-if="entity.status">
-                        <div class="flex mb-1">
-                            <Status :status="entity.status" with-background />
-                        </div>
-
-                        <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                            <span class="mr-1">{{ __('nova-laracache.expiration') }}:</span>
-                            <span>{{ entity.expiration.isPast ? '–' : entity.expiration.diff }}</span>
-                        </div>
-
-                        <div v-if="fluentTtl" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                            <span>{{ __(fluentTtl) }}</span>
-                        </div>
-
-                        <div v-if="entity.isQueueable" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                            <span class="mr-1">{{ __('nova-laracache.is-queueable') }}:</span>
-                        </div>
-
+                    <template v-else-if="entity.status">
                         <div>
-                            <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                <Icon :type="entity.refreshAfter.create ? 'badge-check' : 'x-circle'" solid />
-                                <span class="ml-1">{{ __('nova-laracache.refresh-after.create') }}</span>
+                            <div class="flex mb-1">
+                                <Status :status="entity.status" with-background />
                             </div>
 
                             <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                <Icon :type="entity.refreshAfter.update ? 'badge-check' : 'x-circle'" solid />
-                                <span class="ml-1">{{ __('nova-laracache.refresh-after.update') }}:</span>
+                                <span class="mr-1">{{ __('nova-laracache.expiration') }}:</span>
+                                <span>{{ entity.expiration.isPast ? '–' : entity.expiration.diff }}</span>
                             </div>
 
-                            <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                <Icon :type="entity.refreshAfter.delete ? 'badge-check' : 'x-circle'" solid />
-                                <span class="ml-1">{{ __('nova-laracache.refresh-after.delete') }}:</span>
+                            <div v-if="fluentTtl" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                <span>{{ __(fluentTtl) }}</span>
                             </div>
 
-                            <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                <Icon :type="entity.refreshAfter.restore ? 'badge-check' : 'x-circle'" solid />
-                                <span class="ml-1">{{ __('nova-laracache.refresh-after.restore') }}:</span>
+                            <div v-if="entity.isQueueable" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                <span class="mr-1">{{ __('nova-laracache.is-queueable') }}:</span>
+                            </div>
+
+                            <div>
+                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon :type="entity.refreshAfter.create ? 'badge-check' : 'x-circle'" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.create') }}</span>
+                                </div>
+
+                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon :type="entity.refreshAfter.update ? 'badge-check' : 'x-circle'" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.update') }}:</span>
+                                </div>
+
+                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon :type="entity.refreshAfter.delete ? 'badge-check' : 'x-circle'" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.delete') }}:</span>
+                                </div>
+
+                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon :type="entity.refreshAfter.restore ? 'badge-check' : 'x-circle'" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.restore') }}:</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div v-if="entity.value.content" class="bg-gray-50 rounded px-3 py-3 text-gray-600 mt-6">
-                        <code>
-                            <pre class="mb-3 text-red-400 text-xs">{{ entity.value.type }}</pre>
-                            <pre>{{ entity.value.content }}</pre>
-                        </code>
-                    </div>
+                        <div v-if="entity.value.content" class="bg-gray-50 rounded px-3 py-3 text-gray-600 mt-6">
+                            <code>
+                                <pre class="mb-3 text-red-400 text-xs">{{ entity.value.type }}</pre>
+                                <pre>{{ entity.value.content }}</pre>
+                            </code>
+                        </div>
+                    </template>
                 </ModalContent>
             </slot>
 
