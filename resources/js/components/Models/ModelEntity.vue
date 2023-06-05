@@ -1,5 +1,5 @@
 <template>
-    <div class="laracache-list-item">
+    <div class="laracache-list-item toolbar-container">
         <div class="flex items-center justify-between">
             <div class="bg-gray-200 rounded px-3 py-1 text-gray-600">
                 {{ entity.name }}
@@ -13,40 +13,20 @@
                 <span>{{ __('nova-laracache.expiration') }}: {{ entity.expiration.isPast ? '–' : entity.expiration.diff }}</span>
             </div>
 
-            <div class="toolbar-buttons">
-                <button
-                    v-tooltip.hover="__('nova-laracache.delete')"
-                    @click="emit('delete')"
-                    class="hover:text-primary-500 px-2"
-                    :aria-label="__('nova-laracache.delete')"
-                >
-                    <Icon type="trash" solid />
-                </button>
-
-                <button
-                    v-tooltip.hover="__('nova-laracache.refresh')"
-                    @click="emit('refresh')"
-                    class="hover:text-primary-500 px-2"
-                    :aria-label="__('nova-laracache.refresh')"
-                >
-                    <Icon type="refresh" solid />
-                </button>
-
-                <button
-                    v-tooltip.hover="__('nova-laracache.view')"
-                    @click="emit('view')"
-                    class="hover:text-primary-500 px-2"
-                    :aria-label="__('nova-laracache.view')"
-                >
-                    <Icon type="eye" solid />
-                </button>
-            </div>
+            <Toolbar
+                @view="$emit('view', $event)"
+                @refresh="$emit('refresh', $event)"
+                @delete="$emit('delete', $event)"
+                :model="model.namespace"
+                :entities="[entity.name]"
+            />
         </div>
     </div>
 </template>
 
 <script setup>
 import Status from '../Status.vue'
+import Toolbar from '../Toolbar.vue'
 
 const $emit = defineEmits([
     'view', 'refresh', 'delete'
@@ -62,13 +42,6 @@ const props = defineProps({
         required: true
     }
 })
-
-const emit = (event) => {
-    $emit(event, {
-        model: props.model.namespace,
-        entities: [props.entity.name]
-    })
-}
 </script>
 
 <style lang="scss" scoped>
@@ -81,17 +54,6 @@ const emit = (event) => {
         margin-bottom: 0;
         padding-bottom: 0;
         border-bottom: none;
-    }
-
-    .toolbar-buttons {
-        opacity: 0;
-        transition: all 300ms;
-    }
-
-    &:hover {
-        .toolbar-buttons {
-            opacity: 1;
-        }
     }
 }
 </style>

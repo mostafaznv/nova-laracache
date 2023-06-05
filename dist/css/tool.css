@@ -11,3 +11,11 @@
 .laracache-modal-label-value span:last-child {
   margin-right: 0;
 }
+
+.toolbar-container .toolbar-buttons {
+  opacity: 0;
+  transition: all 300ms;
+}
+.toolbar-container:hover .toolbar-buttons {
+  opacity: 1;
+}

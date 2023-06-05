@@ -1,8 +1,19 @@
 <template>
     <Card class="col-span-12">
         <div class="px-6 py-6">
-            <div class="flex items-center justify-between mb-8">
-                <h3 class="text-lg font-bold">{{ data.model.name }}</h3>
+            <div class="toolbar-container flex items-center justify-between mb-8">
+                <div class="flex items-center">
+                    <h3 class="text-lg font-bold">{{ data.model.name }}</h3>
+
+                    <Toolbar
+                        @view="openModal('view', $event)"
+                        @delete="openModal('delete', $event)"
+                        @refresh="openModal('refresh', $event)"
+                        class="ml-3"
+                        :model="data.model.namespace"
+                        :entities="entitiesList"
+                    />
+                </div>
 
                 <span class="text-xs">{{ data.model.namespace }}</span>
             </div>
@@ -46,11 +57,12 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import {ref, computed} from 'vue'
 import ModelEntity from './ModelEntity.vue'
 import DeleteCacheEntityModal from "../Modals/DeleteCacheEntityModal.vue";
 import RefreshCacheEntityModal from "../Modals/RefreshCacheEntityModal.vue";
 import ViewCacheEntityModal from "../Modals/ViewCacheEntityModal.vue";
+import Toolbar from "../Toolbar.vue";
 
 const model = ref('')
 const entities = ref([])
@@ -65,6 +77,10 @@ const props = defineProps({
         type: Object,
         required: true
     }
+})
+
+const entitiesList = computed(() => {
+    return props.data.entities.map(entity => entity.name)
 })
 
 const openModal = (modal, data) => {
