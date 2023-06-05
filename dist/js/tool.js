@@ -751,6 +751,10 @@ __webpack_require__.r(__webpack_exports__);
       "default": function _default() {
         return [];
       }
+    },
+    withoutView: {
+      type: Boolean,
+      "default": false
     }
   },
   emits: ['view', 'refresh', 'delete'],
@@ -1357,7 +1361,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
         }),
         "class": "ml-3",
         model: $props.data.model.namespace,
-        entities: $setup.entitiesList
+        entities: $setup.entitiesList,
+        "without-view": true
       }, null, 8 /* PROPS */, ["model", "entities"])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.model.namespace), 1 /* TEXT */)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($props.data.entities, function (entity, key) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)($setup["ModelEntity"], {
           onView: _cache[3] || (_cache[3] = function ($event) {
@@ -1549,7 +1554,8 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     solid: ""
   })], 8 /* PROPS */, _hoisted_3)), [[_directive_tooltip, _ctx.__('nova-laracache.refresh'), void 0, {
     hover: true
-  }]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+  }]]), !$props.withoutView ? (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)(((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("button", {
+    key: 0,
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.emit('view');
     }),
@@ -1560,7 +1566,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     solid: ""
   })], 8 /* PROPS */, _hoisted_4)), [[_directive_tooltip, _ctx.__('nova-laracache.view'), void 0, {
     hover: true
-  }]])]);
+  }]]) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]);
 }
 
 /***/ }),

@@ -19,6 +19,7 @@
         </button>
 
         <button
+            v-if="!withoutView"
             v-tooltip.hover="__('nova-laracache.view')"
             @click="emit('view')"
             class="hover:text-primary-500 px-2"
@@ -42,6 +43,10 @@ const props = defineProps({
     entities: {
         type: Array,
         default: () => []
+    },
+    withoutView: {
+        type: Boolean,
+        default: false
     }
 })
 

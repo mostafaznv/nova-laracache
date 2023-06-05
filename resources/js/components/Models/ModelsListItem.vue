@@ -12,6 +12,7 @@
                         class="ml-3"
                         :model="data.model.namespace"
                         :entities="entitiesList"
+                        :without-view="true"
                     />
                 </div>
 
