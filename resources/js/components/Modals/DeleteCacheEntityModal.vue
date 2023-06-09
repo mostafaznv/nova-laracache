@@ -1,5 +1,5 @@
 <template>
-    <Modal data-testid="delete-cache-entity-modal" role="alertdialog" size="sm" :show="show">
+    <Modal data-testid="delete-cache-entity-modal" role="alertdialog" size="md" :show="show">
         <form
             @submit.prevent="handleConfirm"
             class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
