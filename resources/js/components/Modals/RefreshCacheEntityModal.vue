@@ -5,14 +5,14 @@
             class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
         >
             <slot>
-                <CacheEntityModalContent
+                <CacheModalContent
                     type="refresh"
-                    :model="model"
+                    :name="model"
                     :entities="entities"
                 />
             </slot>
 
-            <CacheEntityModalFooter
+            <CacheModalFooter
                 @close="handleClose"
                 type="refresh"
                 :working="working"
@@ -23,8 +23,8 @@
 
 <script setup>
 import {ref} from 'vue'
-import CacheEntityModalContent from './CacheEntityModalContent.vue';
-import CacheEntityModalFooter from './CacheEntityModalFooter.vue'
+import CacheModalContent from './CacheModalContent.vue'
+import CacheModalFooter from './CacheModalFooter.vue'
 
 const emit = defineEmits(['confirm', 'close'])
 

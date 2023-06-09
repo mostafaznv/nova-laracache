@@ -5,18 +5,10 @@
             class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
         >
             <slot>
-                <CacheModalContent
-                    type="delete"
-                    :name="model"
-                    :entities="entities"
-                />
+                <CacheModalContent type="delete" operates-on="group" :name="group" />
             </slot>
 
-            <CacheModalFooter
-                @close="handleClose"
-                type="delete"
-                :working="working"
-            />
+            <CacheModalFooter @close="handleClose" type="delete" :working="working" />
         </form>
     </Modal>
 </template>
@@ -33,13 +25,9 @@ const props = defineProps({
         type: Boolean,
         default: false,
     },
-    model: {
+    group: {
         type: String,
         required: true
-    },
-    entities: {
-        type: Array,
-        default: () => []
     }
 })
 
@@ -55,12 +43,11 @@ const handleConfirm = () => {
     working.value = true
 
     const payload = {
-        model: props.model,
-        entities: props.entities
+        group: props.group,
     }
 
     Nova.request()
-        .post('/nova-vendor/nova-laracache/entity/delete', payload)
+        .post('/nova-vendor/nova-laracache/group/delete', payload)
         .then(() => {
             emit('confirm')
             handleClose()

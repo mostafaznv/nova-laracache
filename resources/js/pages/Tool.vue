@@ -16,6 +16,7 @@
 
                 <template v-else>
                     <ModelsList class="mt-8" :models="data.models || []"/>
+                    <GroupsList class="mt-8" :groups="data.groups || []"/>
                 </template>
             </div>
         </div>
@@ -23,9 +24,10 @@
 </template>
 
 <script setup>
+import {onBeforeMount, ref} from 'vue'
 import Stats from '../components/Stats.vue'
 import ModelsList from '../components/Models/ModelsList.vue'
-import {onBeforeMount, ref} from 'vue'
+import GroupsList from '../components/Groups/GroupsList.vue'
 
 const data = ref({})
 const fetching = ref(false)

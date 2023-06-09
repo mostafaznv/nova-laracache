@@ -44,17 +44,3 @@ const props = defineProps({
     }
 })
 </script>
-
-<style lang="scss" scoped>
-.laracache-list-item {
-    margin-bottom: 24px;
-    padding-bottom: 24px;
-    border-bottom: solid 1px rgba(var(--colors-gray-200));
-
-    &:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-}
-</style>
