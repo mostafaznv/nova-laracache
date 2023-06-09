@@ -28,7 +28,7 @@ Therefore, if you decide to use my packages, please kindly consider making a don
 
 
 ## Installation
-> Ensure that you have already installed and configured the LaraCache package in your Laravel application. If you haven't done so, please refer to the LaraCache [documentation](https://github.com/mostafaznv/laracache) for instructions on installation and usage. **It's important to create cache entities for each model before proceeding with Nova LaraCache.**
+> **Note:** Ensure that you have already installed and configured the LaraCache package in your Laravel application. If you haven't done so, please refer to the LaraCache [documentation](https://github.com/mostafaznv/laracache) for instructions on installation and usage. **It's important to create cache entities for each model before proceeding with Nova LaraCache.**
 
 To get started, you will need to install the following dependency:
 
