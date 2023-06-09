@@ -9,8 +9,9 @@
         </div>
 
         <div class="flex items-center justify-between mt-2">
-            <div class="text-xs">
-                <span>{{ __('nova-laracache.expiration') }}: {{ entity.expiration.isPast ? '–' : entity.expiration.diff }}</span>
+            <div class="flex items-center text-xs">
+                <span class="mr-1">{{ __('nova-laracache.expiration') }}:</span>
+                <span>{{ entity.expiration.isPast || entity.status !== 'CREATED' ? '–' : entity.expiration.diff }}</span>
             </div>
 
             <Toolbar
