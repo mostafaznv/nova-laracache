@@ -2,7 +2,6 @@
     <div>
         <ModelsListItem
             v-for="(item, key) in models"
-            @refresh="fetch"
             class="mb-3"
             :key="key"
             :data="item"

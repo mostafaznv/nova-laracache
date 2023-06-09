@@ -14,7 +14,7 @@
                 <span>{{ entity.expiration.isPast || entity.status !== 'CREATED' ? '–' : entity.expiration.diff }}</span>
             </div>
 
-            <Toolbar
+            <ModelToolbar
                 @view="$emit('view', $event)"
                 @refresh="$emit('refresh', $event)"
                 @delete="$emit('delete', $event)"
@@ -27,7 +27,7 @@
 
 <script setup>
 import Status from '../Status.vue'
-import Toolbar from '../Toolbar.vue'
+import ModelToolbar from './ModelToolbar.vue'
 
 const $emit = defineEmits([
     'view', 'refresh', 'delete'

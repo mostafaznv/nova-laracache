@@ -5,7 +5,7 @@
                 <div class="flex items-center">
                     <h3 class="text-lg font-bold">{{ data.model.name }}</h3>
 
-                    <Toolbar
+                    <ModelToolbar
                         @view="openModal('view', $event)"
                         @delete="openModal('delete', $event)"
                         @refresh="openModal('refresh', $event)"
@@ -60,10 +60,10 @@
 <script setup>
 import {ref, computed} from 'vue'
 import ModelEntity from './ModelEntity.vue'
-import DeleteCacheEntityModal from "../Modals/DeleteCacheEntityModal.vue";
-import RefreshCacheEntityModal from "../Modals/RefreshCacheEntityModal.vue";
-import ViewCacheEntityModal from "../Modals/ViewCacheEntityModal.vue";
-import Toolbar from "../Toolbar.vue";
+import DeleteCacheEntityModal from '../Modals/DeleteCacheEntityModal.vue'
+import RefreshCacheEntityModal from '../Modals/RefreshCacheEntityModal.vue'
+import ViewCacheEntityModal from '../Modals/ViewCacheEntityModal.vue'
+import ModelToolbar from './ModelToolbar.vue'
 import __ from '../../../../vendor/laravel/nova/resources/js/util/localization'
 
 const model = ref('')
