@@ -6,7 +6,18 @@
 
 
             <Stats />
-            <ModelsList class="mt-8" />
+
+            <div>
+                <Card v-if="fetching" class="py-12">
+                    <div class="rounded-lg flex items-center justify-center inset-0 z-30 light">
+                        <Loader class="text-gray-300" width="30" />
+                    </div>
+                </Card>
+
+                <template v-else>
+                    <ModelsList class="mt-8" :models="data.models || []"/>
+                </template>
+            </div>
         </div>
     </div>
 </template>
@@ -14,4 +25,25 @@
 <script setup>
 import Stats from '../components/Stats.vue'
 import ModelsList from '../components/Models/ModelsList.vue'
+import {onBeforeMount, ref} from 'vue'
+
+const data = ref({})
+const fetching = ref(false)
+
+const fetch = () => {
+    fetching.value = true
+
+    Nova.request()
+        .get('/nova-vendor/nova-laracache/list')
+        .then(response => {
+            data.value = response.data
+        })
+        .finally(() => {
+            fetching.value = false
+        })
+}
+
+onBeforeMount(() => {
+    fetch()
+})
 </script>
