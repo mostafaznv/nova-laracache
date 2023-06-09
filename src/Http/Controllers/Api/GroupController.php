@@ -1,6 +1,6 @@
 <?php
 
-namespace Mostafaznv\NovaLaraCache\Http\Controllers;
+namespace Mostafaznv\NovaLaraCache\Http\Controllers\Api;
 
 use Mostafaznv\NovaLaraCache\Http\Requests\OperateGroupRequest;
 use Mostafaznv\NovaLaraCache\Jobs\DeleteGroupCacheJob;

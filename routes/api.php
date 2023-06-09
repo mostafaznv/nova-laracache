@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mostafaznv\NovaLaraCache\Http\Controllers\EntityController;
-use Mostafaznv\NovaLaraCache\Http\Controllers\GroupController;
-use Mostafaznv\NovaLaraCache\Http\Controllers\ListController;
-use Mostafaznv\NovaLaraCache\Http\Controllers\StatsController;
+use Mostafaznv\NovaLaraCache\Http\Controllers\Api\EntityController;
+use Mostafaznv\NovaLaraCache\Http\Controllers\Api\GroupController;
+use Mostafaznv\NovaLaraCache\Http\Controllers\Api\ListController;
+use Mostafaznv\NovaLaraCache\Http\Controllers\Api\StatsController;
 
 Route::as('nova-laracache.')->middleware('nova')->group(function () {
     Route::get('stats', StatsController::class)->name('stats');

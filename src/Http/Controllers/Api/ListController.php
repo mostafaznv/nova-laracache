@@ -1,6 +1,6 @@
 <?php
 
-namespace Mostafaznv\NovaLaraCache\Http\Controllers;
+namespace Mostafaznv\NovaLaraCache\Http\Controllers\Api;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Arr;
@@ -23,14 +23,7 @@ class ListController extends ApiController
         $list = [];
 
         foreach ($models as $model) {
-            $list[] = [
-                'model'    => [
-                    'name'      => class_basename($model->getMorphClass()),
-                    'namespace' => $model->getMorphClass(),
-                ],
-                'table'    => $model->getTable(),
-                'entities' => $this->entities($model)
-            ];
+            $list[] = $this->modelData($model, $this->entities($model));
         }
 
         return $list;
@@ -48,16 +41,10 @@ class ListController extends ApiController
                 $m = $model['model'];
 
                 if (method_exists($m, 'cacheEntities')) {
-                    $m = $this->model($m);
-
-                    $models[] = [
-                        'model'    => [
-                            'name'      => class_basename($m->getMorphClass()),
-                            'namespace' => $m->getMorphClass(),
-                        ],
-                        'table'    => $m->getTable(),
-                        'entities' => $model['entities']
-                    ];
+                    $models[] = $this->modelData(
+                        $this->model($m),
+                        $model['entities']
+                    );
                 }
             }
 
@@ -87,5 +74,17 @@ class ListController extends ApiController
         }
 
         return $entities;
+    }
+
+    private function modelData(Model $model, array $entities): array
+    {
+        return [
+            'model'    => [
+                'name'      => class_basename($model->getMorphClass()),
+                'namespace' => $model->getMorphClass(),
+            ],
+            'table'    => $model->getTable(),
+            'entities' => $entities
+        ];
     }
 }

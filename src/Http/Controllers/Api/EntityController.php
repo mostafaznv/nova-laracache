@@ -1,6 +1,6 @@
 <?php
 
-namespace Mostafaznv\NovaLaraCache\Http\Controllers;
+namespace Mostafaznv\NovaLaraCache\Http\Controllers\Api;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;

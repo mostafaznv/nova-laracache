@@ -1,6 +1,6 @@
 <?php
 
-namespace Mostafaznv\NovaLaraCache\Http\Controllers;
+namespace Mostafaznv\NovaLaraCache\Http\Controllers\Api;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Routing\Controller;
@@ -20,6 +20,7 @@ class ApiController extends Controller
     {
         $this->driver = config('laracache.driver') ?: config('cache.default');
     }
+
 
     protected function model(string $model): Model
     {
