@@ -1371,7 +1371,7 @@ var _hoisted_1 = {
   "class": "px-6 py-6"
 };
 var _hoisted_2 = {
-  "class": "toolbar-container flex items-center justify-between mb-8"
+  "class": "flex items-center justify-between mb-8"
 };
 var _hoisted_3 = {
   "class": "text-lg font-bold"
@@ -1382,7 +1382,7 @@ var _hoisted_4 = {
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_Card = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("Card");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Card, {
-    "class": "col-span-12"
+    "class": "toolbar-container col-span-12"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
       return [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h3", _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.data.group.name), 1 /* TEXT */), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["GroupToolbar"], {
@@ -1550,7 +1550,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Modal, {
     "data-testid": "delete-cache-entity-modal",
     role: "alertdialog",
-    size: "sm",
+    size: "md",
     show: $props.show
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -1595,7 +1595,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Modal, {
     "data-testid": "delete-cache-entity-modal",
     role: "alertdialog",
-    size: "sm",
+    size: "md",
     show: $props.show
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -1640,7 +1640,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Modal, {
     "data-testid": "delete-cache-entity-modal",
     role: "alertdialog",
-    size: "sm",
+    size: "md",
     show: $props.show
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -1685,7 +1685,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(_component_Modal, {
     "data-testid": "delete-cache-entity-modal",
     role: "alertdialog",
-    size: "sm",
+    size: "md",
     show: $props.show
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -2277,16 +2277,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Tool_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/Tool.vue */ "./resources/js/pages/Tool.vue");
-/*import DetailField from './fields/DetailField.vue'
-import FormField from './fields/FormField.vue'
-import IndexField from './fields/IndexField.vue'*/
 
 Nova.booting(function (app) {
   Nova.inertia('NovaLaraCache', _pages_Tool_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
-
-  /*app.component('index-nova-file-manager-field', IndexField)
-  app.component('detail-nova-file-manager-field', DetailField)
-  app.component('form-nova-file-manager-field', FormField)*/
 });
 
 /***/ }),
