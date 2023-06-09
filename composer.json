@@ -8,8 +8,7 @@
         "ext-json": "*",
         "laravel/framework": "^10.4.1",
         "laravel/nova": "^4.0",
-        "mostafaznv/laracache": "^2.3.2",
-        "nova-kit/nova-packages-tool": "^1.9"
+        "mostafaznv/laracache": "^2.3.2"
     },
     "autoload": {
         "psr-4": {
