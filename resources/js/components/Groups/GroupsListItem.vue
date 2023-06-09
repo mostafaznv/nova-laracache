@@ -1,7 +1,7 @@
 <template>
-    <Card class="col-span-12">
+    <Card class="toolbar-container col-span-12">
         <div class="px-6 py-6">
-            <div class="toolbar-container flex items-center justify-between mb-8">
+            <div class="flex items-center justify-between mb-8">
                 <h3 class="text-lg font-bold">{{ data.group.name }}</h3>
 
                 <GroupToolbar
