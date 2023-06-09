@@ -10,14 +10,12 @@ class ListController extends ApiController
 {
     public function __invoke()
     {
-        $list = $this->list();
-
         return response()->json([
-            'list' => $list
+            'models' => $this->listModels()
         ]);
     }
 
-    private function list(): array
+    private function listModels(): array
     {
         $models = $this->models();
         $list = [];
