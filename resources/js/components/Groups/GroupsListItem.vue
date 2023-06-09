@@ -35,11 +35,11 @@
 
 <script setup>
 import {ref} from 'vue'
+import { useLocalization } from 'laravel-nova'
 import GroupModels from './GroupModels.vue'
 import DeleteGroupModal from '../Modals/DeleteGroupModal.vue'
 import RefreshGroupModal from '../Modals/RefreshGroupModal.vue'
 import GroupToolbar from './GroupToolbar.vue'
-import __ from '../../../../vendor/laravel/nova/resources/js/util/localization'
 
 const group = ref('')
 const deleteModalOpen = ref(false)
@@ -53,6 +53,8 @@ const props = defineProps({
         required: true
     }
 })
+
+const { __ } = useLocalization()
 
 const openModal = (modal, data) => {
     group.value = data

@@ -59,12 +59,12 @@
 
 <script setup>
 import {ref, computed} from 'vue'
+import { useLocalization } from 'laravel-nova'
 import ModelEntity from './ModelEntity.vue'
 import DeleteCacheEntityModal from '../Modals/DeleteCacheEntityModal.vue'
 import RefreshCacheEntityModal from '../Modals/RefreshCacheEntityModal.vue'
 import ViewCacheEntityModal from '../Modals/ViewCacheEntityModal.vue'
 import ModelToolbar from './ModelToolbar.vue'
-import __ from '../../../../vendor/laravel/nova/resources/js/util/localization'
 
 const model = ref('')
 const entities = ref([])
@@ -84,6 +84,8 @@ const props = defineProps({
 const entitiesList = computed(() => {
     return props.data.entities.map(entity => entity.name)
 })
+
+const { __ } = useLocalization()
 
 const openModal = (modal, data) => {
     model.value = data.model
