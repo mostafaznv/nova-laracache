@@ -63,8 +63,6 @@ Done! just navigate to your Laravel Nova panel. You should now see the LaraCache
 **Remember**, before using Nova LaraCache, ensure that you have followed the instructions in the LaraCache [documentation](https://github.com/mostafaznv/laracache) to create cache entities for each model. This will ensure that you have the necessary cache setup in place for effective cache management using Nova LaraCache.
 
 
-https://github.com/mostafaznv/nova-laracache/assets/7619687/91bb08dd-0404-4b35-add4-4437486d2110
-
 ----
 I am on an open-source journey 🚀, and I wish I could solely focus on my development path without worrying about my financial situation. However, as life is not perfect, I have to consider other factors.
 
