@@ -4,6 +4,8 @@
 [![Packagist Downloads](https://img.shields.io/packagist/dt/mostafaznv/nova-laracache?style=flat-square&logo=packagist)](https://packagist.org/packages/mostafaznv/nova-laracache)
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mostafaznv/nova-laracache.svg?style=flat-square&logo=composer)](https://packagist.org/packages/mostafaznv/nova-laracache)
 
+![nova-laracache](https://github.com/mostafaznv/laracache/assets/7619687/e4795f82-e043-4ebc-9cf2-36680b56a748)
+
 Nova LaraCache is a robust Laravel Nova package that facilitates the seamless integration of the [LaraCache](https://github.com/mostafaznv/laracache) package with the Laravel Nova. With Nova LaraCache, users gain a powerful cache management tool within the familiar Laravel Nova interface.
 
 This package extends the capabilities of LaraCache, offering a comprehensive set of tools to efficiently moderate and manage cache entities. Users can effortlessly monitor cache expiration dates, ensuring the freshness and accuracy of cached data. By reviewing cache entity contents, users can gain insights into the stored data and its relevance. Nova LaraCache also enables users to regenerate cache items, facilitating updates and refreshes of cached entities. Additionally, users have the flexibility to delete specific cache entries, providing control over cache management tasks.
