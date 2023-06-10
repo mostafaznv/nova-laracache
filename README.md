@@ -24,7 +24,7 @@ Therefore, if you decide to use my packages, please kindly consider making a don
 - PHP 8.1 or higher
 - LaraCache 2.3.2 or higher
 - Laravel 10.4.1 or higher
-- Nova 4.24.4 or higher
+- Nova 4.24 or higher
 
 
 ## Installation
