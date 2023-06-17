@@ -56,7 +56,7 @@ class ApiController extends Controller
 
         if ($withValue) {
             $value = [
-                'type'    => is_null($cache->value) ? null : get_class($cache->value),
+                'type'    => $this->getTypeOfCacheItem($cache->value),
                 'content' => $cache->value
             ];
         }
@@ -90,5 +90,22 @@ class ApiController extends Controller
                 'isPast' => $expiration->isPast(),
             ],
         ];
+    }
+
+    private function getTypeOfCacheItem(mixed $value): ?string
+    {
+        if (is_null($value)) {
+            return null;
+        }
+
+        if (is_array($value)) {
+            $value = $value[0];
+        }
+
+        if (is_object($value)) {
+            return get_class($value);
+        }
+
+        return gettype($value);
     }
 }
