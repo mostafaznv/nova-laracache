@@ -36,24 +36,24 @@
                             </div>
 
                             <div>
-                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon :type="entity.refreshAfter.create ? 'badge-check' : 'x-circle'" solid />
+                                <div v-if="entity.refreshAfter.create"  class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon type="badge-check" solid />
                                     <span class="ml-1">{{ __('nova-laracache.refresh-after.create') }}</span>
                                 </div>
 
-                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon :type="entity.refreshAfter.update ? 'badge-check' : 'x-circle'" solid />
-                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.update') }}:</span>
+                                <div v-if="entity.refreshAfter.update" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon type="badge-check" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.update') }}</span>
                                 </div>
 
-                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon :type="entity.refreshAfter.delete ? 'badge-check' : 'x-circle'" solid />
-                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.delete') }}:</span>
+                                <div v-if="entity.refreshAfter.delete" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon type="badge-check" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.delete') }}</span>
                                 </div>
 
-                                <div class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon :type="entity.refreshAfter.restore ? 'badge-check' : 'x-circle'" solid />
-                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.restore') }}:</span>
+                                <div v-if="entity.refreshAfter.restore" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon type="badge-check" solid />
+                                    <span class="ml-1">{{ __('nova-laracache.refresh-after.restore') }}</span>
                                 </div>
                             </div>
                         </div>
