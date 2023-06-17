@@ -12,6 +12,12 @@ class NovaLaraCacheServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../lang/' => resource_path('lang/vendor/nova-laracache'),
+            ]);
+        }
+
         $this->app->booted(function() {
             $this->routes();
         });
