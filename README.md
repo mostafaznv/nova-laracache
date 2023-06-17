@@ -37,6 +37,12 @@ To get started, you will need to install the following dependency:
 ```shell
 composer require mostafaznv/nova-laracache
 ```
+
+Then, you should publish vendor files and assets:
+```shell
+php artisan vendor:publish --provider="Mostafaznv\NovaLaraCache\NovaLaraCacheServiceProvider"
+```
+
 That's it, you're ready to go!
 
 ## Usage
