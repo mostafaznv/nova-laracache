@@ -8,7 +8,7 @@ use Mostafaznv\NovaLaraCache\Http\Controllers\Api\StatsController;
 
 Route::as('nova-laracache.')->middleware('nova')->group(function () {
     Route::get('stats', StatsController::class)->name('stats');
-    Route::get('list', ListController::class)->name('stats');
+    Route::get('list', ListController::class)->name('list');
 
     Route::prefix('entity')->name('entity.')->group(function () {
         Route::get('show', [EntityController::class, 'show'])->name('show');
