@@ -98,7 +98,7 @@ class ApiController extends Controller
             return null;
         }
 
-        if (is_array($value)) {
+        if (is_array($value) and isset($value[0])) {
             $value = $value[0];
         }
 
