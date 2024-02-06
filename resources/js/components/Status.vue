@@ -1,7 +1,7 @@
 <template>
     <div class="flex items-center" :class="['status-' + statusSlug, withBackground ? 'with-bg' : '']">
         <Badge class="whitespace-nowrap flex items-center mx-auto" :title="status">
-            <span class="slug mr-3">{{ statusSlug }}</span>
+            <span class="slug mr-3">{{ __(statusSlug) }}</span>
 
             <div>
                 <Icon

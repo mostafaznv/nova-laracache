@@ -58,9 +58,9 @@
                             </div>
                         </div>
 
-                        <div v-if="entity.value.content" class="bg-gray-50 rounded px-3 py-3 text-gray-600 mt-6">
+                        <div v-if="entity.value.content" class="cache-content bg-gray-50 rounded px-3 py-3 text-gray-600 mt-6">
                             <code>
-                                <pre class="mb-3 text-red-400 text-xs">{{ entity.value.type }}</pre>
+                                <pre class="mb-3 text-red-500 text-xs">{{ entity.value.type }}</pre>
                                 <pre>{{ entity.value.content }}</pre>
                             </code>
                         </div>
@@ -156,3 +156,9 @@ const handleClose = () => {
     working.value = false
 }
 </script>
+
+<style lang="scss" scoped>
+.cache-content {
+    direction: ltr;
+}
+</style>

@@ -10,15 +10,18 @@
                 {{ __('Cancel') }}
             </LinkButton>
 
-            <LoadingButton
+            <DefaultButton
                 ref="confirmButton"
-                :processing="working"
+                class="submit-button"
                 :disabled="working"
-                :component="submitButtonType"
+                :class="submitButtonClass"
                 type="submit"
             >
-                {{ __(`nova-laracache.modal.${type}.submit`) }}
-            </LoadingButton>
+                <Loader v-if="working" width="22" />
+                <template v-else>
+                    {{ __(`nova-laracache.modal.${type}.submit`) }}
+                </template>
+            </DefaultButton>
         </div>
     </ModalFooter>
 </template>
@@ -39,7 +42,15 @@ const props = defineProps({
     }
 })
 
-const submitButtonType = computed(() => {
-    return props.type === 'delete' ? 'DangerButton' : 'DefaultButton'
+const submitButtonClass = computed(() => {
+    return props.type === 'delete'
+        ? 'bg-red-500 hover:bg-red-400 text-white dark:text-gray-900'
+        : ''
 })
 </script>
+
+<style lang="scss" scoped>
+.submit-button {
+    min-width: 90px;
+}
+</style>
