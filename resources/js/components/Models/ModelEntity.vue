@@ -2,7 +2,7 @@
     <div class="laracache-list-item toolbar-container">
         <div class="flex items-center justify-between">
             <div class="bg-gray-200 rounded px-3 py-1 text-gray-600">
-                {{ entity.name }}
+                {{ __(entity.name) }}
             </div>
 
             <Status :status="entity.status" />
