@@ -3,7 +3,7 @@
         <div class="px-6 py-6">
             <div class="toolbar-container flex items-center justify-between mb-8">
                 <div class="flex items-center">
-                    <h3 class="text-lg font-bold">{{ data.model.name }}</h3>
+                    <h3 class="text-lg font-bold">{{ __(data.model.name) }}</h3>
 
                     <ModelToolbar
                         @view="openModal('view', $event)"

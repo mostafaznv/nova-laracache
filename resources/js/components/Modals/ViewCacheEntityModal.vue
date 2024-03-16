@@ -5,9 +5,7 @@
             class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
         >
             <slot>
-                <ModalHeader
-                    v-text="`${model.split('\\').pop()} – ${entities[0]}`"
-                />
+                <ModalHeader v-text="modalHeader"/>
 
                 <ModalContent>
                     <Card v-if="working" class="py-12 shadow-none">
@@ -87,8 +85,10 @@
 <script setup>
 import {ref, watch, computed} from 'vue'
 import Status from '../Status.vue'
+import {useLocalization} from 'laravel-nova'
 
 const emit = defineEmits(['close'])
+const {__} = useLocalization()
 
 const props = defineProps({
     show: {
@@ -123,6 +123,13 @@ const fluentTtl = computed(() => {
     }
 
     return null
+})
+
+const modalHeader = computed(() => {
+    const model = __(props.model.split('\\').pop())
+    const entity = __(props.entities[0])
+
+    return model + ' – ' + entity
 })
 
 watch(() => props.show, async (show) => {
