@@ -52,7 +52,9 @@ class ApiController extends Controller
         $prefix = Str::kebab(class_basename($model));
 
         $cache = CacheData::fromCache($entity, $prefix);
-        $expiration = Carbon::createFromTimestamp($cache->expiration);
+        $expiration = $cache->expiration
+            ? Carbon::createFromTimestamp($cache->expiration)
+            : null;
 
         if ($withValue) {
             $value = [
@@ -85,9 +87,9 @@ class ApiController extends Controller
             ],
             'expiration'         => [
                 'unix'   => $cache->expiration,
-                'date'   => $expiration->toDateTimeString(),
-                'diff'   => $expiration->diffForHumans(),
-                'isPast' => $expiration->isPast(),
+                'date'   => $expiration?->toDateTimeString() ?? '',
+                'diff'   => $expiration?->diffForHumans() ?? '',
+                'isPast' => $expiration?->isPast() ?? true,
             ],
         ];
     }
