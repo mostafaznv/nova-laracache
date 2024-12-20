@@ -1,13 +1,11 @@
 <template>
     <div class="flex items-center" :class="['status-' + statusSlug, withBackground ? 'with-bg' : '']">
-        <Badge class="whitespace-nowrap flex items-center mx-auto" :title="status">
-            <span class="slug mr-3">{{ __(statusSlug) }}</span>
-
+        <Badge class="whitespace-nowrap flex items-center gap-2 mx-auto" :title="status">
             <div>
                 <Icon
                     v-if="status === 'NOT_CREATED'"
-                    type="minus-circle"
-                    :solid="true"
+                    name="minus-circle"
+                    type="mini"
                 />
 
                 <Loader
@@ -17,23 +15,27 @@
 
                 <Icon
                     v-if="status === 'DELETED'"
-                    type="exclamation-circle"
+                    name="exclamation-circle"
+                    type="mini"
                     style="fill: rgb(239,68,68)"
-                    :solid="true"
                 />
 
                 <Icon
                     v-if="status === 'CREATED'"
-                    type="check-circle"
-                    :solid="true"
+                    name="check-circle"
+                    type="mini"
                 />
             </div>
+
+            <span class="slug">{{ __(statusSlug) }}</span>
         </Badge>
     </div>
 </template>
 
 <script setup>
 import {computed} from 'vue'
+import {Icon} from 'laravel-nova-ui'
+
 
 const props = defineProps({
     status: {

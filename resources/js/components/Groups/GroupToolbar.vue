@@ -6,7 +6,7 @@
             class="hover:text-primary-500 px-2"
             :aria-label="__('nova-laracache.delete')"
         >
-            <Icon type="trash" solid />
+            <Icon name="trash" type="solid" />
         </button>
 
         <button
@@ -15,12 +15,14 @@
             class="hover:text-primary-500 px-2"
             :aria-label="__('nova-laracache.refresh')"
         >
-            <Icon type="refresh" solid />
+            <Icon name="arrow-path" type="solid" />
         </button>
     </div>
 </template>
 
 <script setup>
+import {Icon} from 'laravel-nova-ui'
+
 const $emit = defineEmits([
     'view', 'refresh', 'delete'
 ])
