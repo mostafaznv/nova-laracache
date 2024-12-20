@@ -1,33 +1,34 @@
 <template>
     <ModalFooter>
         <div class="ml-auto">
-            <LinkButton
+            <Button
+                @click.prevent="$emit('close')"
+                variant="ghost"
                 type="button"
                 data-testid="cancel-button"
-                @click.prevent="$emit('close')"
                 class="mr-3"
             >
                 {{ __('Cancel') }}
-            </LinkButton>
+            </Button>
 
-            <DefaultButton
+            <Button
                 ref="confirmButton"
-                class="submit-button"
-                :disabled="working"
-                :class="submitButtonClass"
                 type="submit"
+                class="submit-button"
+                :variant="type === 'cancel' ? 'danger' : 'solid'"
+                :disabled="working"
             >
                 <Loader v-if="working" width="22" />
                 <template v-else>
                     {{ __(`nova-laracache.modal.${type}.submit`) }}
                 </template>
-            </DefaultButton>
+            </Button>
         </div>
     </ModalFooter>
 </template>
 
 <script setup>
-import {computed} from 'vue'
+import {Button} from 'laravel-nova-ui'
 
 const emit = defineEmits(['close'])
 
@@ -40,12 +41,6 @@ const props = defineProps({
         type: Boolean,
         default: false
     }
-})
-
-const submitButtonClass = computed(() => {
-    return props.type === 'delete'
-        ? 'bg-red-500 hover:bg-red-400 text-white dark:text-gray-900'
-        : ''
 })
 </script>
 

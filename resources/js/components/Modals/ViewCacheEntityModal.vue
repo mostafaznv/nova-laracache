@@ -1,9 +1,6 @@
 <template>
     <Modal data-testid="delete-cache-entity-modal" role="alertdialog" size="4xl" :show="show">
-        <form
-            @submit.prevent="handleConfirm"
-            class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden"
-        >
+        <div class="mx-auto bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
             <slot>
                 <ModalHeader v-text="modalHeader"/>
 
@@ -33,24 +30,24 @@
                                 <span class="mr-1">{{ __('nova-laracache.is-queueable') }}:</span>
                             </div>
 
-                            <div>
-                                <div v-if="entity.refreshAfter.create"  class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon type="badge-check" solid />
+                            <div class="flex items-center">
+                                <div v-if="entity.refreshAfter.create"  class="bg-gray-200 inline-flex items-center rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon name="check-badge" type="mini" />
                                     <span class="ml-1">{{ __('nova-laracache.refresh-after.create') }}</span>
                                 </div>
 
-                                <div v-if="entity.refreshAfter.update" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon type="badge-check" solid />
+                                <div v-if="entity.refreshAfter.update" class="bg-gray-200 inline-flex items-center rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon name="badge-check" type="mini" />
                                     <span class="ml-1">{{ __('nova-laracache.refresh-after.update') }}</span>
                                 </div>
 
-                                <div v-if="entity.refreshAfter.delete" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon type="badge-check" solid />
+                                <div v-if="entity.refreshAfter.delete" class="bg-gray-200 inline-flex items-center rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon name="badge-check" type="mini" />
                                     <span class="ml-1">{{ __('nova-laracache.refresh-after.delete') }}</span>
                                 </div>
 
-                                <div v-if="entity.refreshAfter.restore" class="bg-gray-200 inline-flex rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
-                                    <Icon type="badge-check" solid />
+                                <div v-if="entity.refreshAfter.restore" class="bg-gray-200 inline-flex items-center rounded px-3 py-1 text-sm text-gray-600 mr-1 mb-1">
+                                    <Icon name="badge-check" type="mini" />
                                     <span class="ml-1">{{ __('nova-laracache.refresh-after.restore') }}</span>
                                 </div>
                             </div>
@@ -68,17 +65,18 @@
 
             <ModalFooter>
                 <div class="ml-auto">
-                    <LinkButton
+                    <Button
                         type="button"
+                        variant="ghost"
                         data-testid="cancel-button"
-                        @click.prevent="$emit('close')"
+                        @click.prevent="handleClose"
                         class="mr-3"
                     >
                         {{ __('Close') }}
-                    </LinkButton>
+                    </Button>
                 </div>
             </ModalFooter>
-        </form>
+        </div>
     </Modal>
 </template>
 
@@ -86,6 +84,7 @@
 import {ref, watch, computed} from 'vue'
 import Status from '../Status.vue'
 import {useLocalization} from 'laravel-nova'
+import {Icon, Button} from 'laravel-nova-ui'
 
 const emit = defineEmits(['close'])
 const {__} = useLocalization()
